@@ -10,7 +10,7 @@ RUN CGO_ENABLED=0 GOOS=linux go build -tags prod -a -installsuffix cgo -ldflags 
 
 FROM scratch
 
-COPY --from=builder /go/src/github.com/monder/dummy-server /server
+COPY --from=builder /go/src/github.com/monder/dummy-server/server /server
 
 WORKDIR /
 ENTRYPOINT ["/server"]
